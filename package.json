@@ -1,0 +1,23 @@
+{
+  "name": "drinkwater",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LordNayan/DrinkWater.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LordNayan/DrinkWater/issues"
+  },
+  "homepage": "https://github.com/LordNayan/DrinkWater#readme",
+  "dependencies": {
+    "node-cron": "^3.0.1",
+    "twilio": "^3.80.0"
+  }
+}
