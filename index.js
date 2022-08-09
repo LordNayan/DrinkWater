@@ -29,14 +29,26 @@ const myNumber = "whatsapp:+919754231666";
 
 cron.schedule("* * * * *", () => {
   console.log("Running the cron - reminder");
-  const item = messages[Math.floor(Math.random() * messages.length)];
-  client.messages
-    .create({
-      body: item,
-      from: sender,
-      to: myNumber,
-    })
-    .then((message) => console.log(message.sid))
-    .done();
+  const currentTime = new Date();
+  const currentOffset = currentTime.getTimezoneOffset();
+  const ISTOffset = 330; // IST offset UTC +5:30
+  const ISTTime = new Date(
+    currentTime.getTime() + (ISTOffset + currentOffset) * 60000
+  );
+  const hours = ISTTime.getHours();
+  if (hours > 8 && hours <= 23) {
+    const item = messages[Math.floor(Math.random() * messages.length)];
+    client.messages
+      .create({
+        body: item,
+        from: sender,
+        to: myNumber,
+      })
+      .then((message) => console.log(message.sid))
+      .done();
+  }
+  else{
+      console.log("Sleeping Time");
+  }
   console.log("Exiting the cron - reminder");
 });
