@@ -1,6 +1,5 @@
 const cron = require("node-cron");
-const accountSid = "AC05216660719e4ee7e1e390cdcdd3e174";
-const authToken = "167860509d8700e6fcdb62ad7ab08b99";
+
 const client = require("twilio")(accountSid, authToken);
 const messages = [
   "Paani piya ki nahi Dr. Saab???????",
